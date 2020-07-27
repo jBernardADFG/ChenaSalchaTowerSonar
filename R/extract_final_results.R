@@ -1,8 +1,8 @@
 #' Extract the final results from the model.
-#' @param hamachan_samples The output of run_hamachan.
-#' @param historical_counts The output of prepare_historical_counts.
-#' @param ra_ests The output of runningavg_interp.
-#' @author Matt Tyres and Jordy Bernard
+#' @param hamachan_samples The output of \code{\link{run_hamachan}}.
+#' @param historical_counts The output of \code{\link{prepare_historical_counts}}.
+#' @param ra_ests The output of \code{\link{runningavg_interp}}.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 extract_final_results <- function(hamachan_samples, historical_counts, ra_ests){

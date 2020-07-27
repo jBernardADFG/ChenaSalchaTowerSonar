@@ -1,7 +1,8 @@
-#' Format the visual counts for expansion
-#' @description Function formats the visual counts so that they can be expanded using the function expand_counts. This function will return an array where each cell corresponds to a 20-min counting block.  Array dimensions correspond to date, 8-hr shift, hour period, and 20-min block. 
+#' Format the visual counts for expansion.
+#' @description Function formats the visual counts so that they can be expanded using the function \code{\link{expand_counts}}. This function will return an array where each cell corresponds to a 20-min counting block.  Array dimensions correspond to date, 8-hr shift, hour period, and 20-min block. 
 #' @param visual_counts Visual count data. See examples.
-#' @param sonar_expansion_data Output of prepare_sonar_counts_for_expansion.
+#' @param sonar_expansion_data Output of \code{\link{prepare_sonar_counts_for_expansion}}.
+#' @export
 
 prepare_visual_counts_for_expansion <- function(visual_counts, sonar_expansion_data){
   Schin_vis <- Schum_vis <- Cchin_vis <- Cchum_vis <- NA*sonar_expansion_data[[1]]

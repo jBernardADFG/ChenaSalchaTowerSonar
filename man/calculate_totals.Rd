@@ -7,7 +7,7 @@
 calculate_totals(final_results, from, to)
 }
 \arguments{
-\item{final_results}{The output of extract_final_results.}
+\item{final_results}{The output of \code{\link{extract_final_results}}.}
 
 \item{from}{The start date (e.g. "2019-06-23").}
 
@@ -17,5 +17,5 @@ calculate_totals(final_results, from, to)
 Calculate totals, according to a user-input date range.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

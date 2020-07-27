@@ -2,20 +2,20 @@
 % Please edit documentation in R/run_mixture_model.R
 \name{run_mixture_model}
 \alias{run_mixture_model}
-\title{Use sonar data to apportion and enumerate fish passage by species}
+\title{Use sonar data to apportion and enumerate fish passage by species.}
 \usage{
 run_mixture_model(mixture_data, file_dir, niter = 5e+05, ncores = 3)
 }
 \arguments{
-\item{mixture_data}{Output of gather_mixture_data}
+\item{mixture_data}{Output of \code{\link{gather_mixture_data}}.}
 
 \item{niter}{The number of MCMC iterations. 50k takes roughly 2.5 hours, 200k takes 9 hours, 500k takes 25ish.}
 
 \item{ncores}{The number of cores for parallel chains.}
 }
 \description{
-The function runs the big mixture model and outputs the posterior samples
+The function runs the big mixture model and outputs the posterior samples.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

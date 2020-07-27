@@ -10,8 +10,8 @@ ProcessFiles_ARIS(dir)
 \item{dir}{Full address of the directory to be processed.}
 }
 \description{
-Reads all the files in the passed directory and appends them into one data frame.  This is the only function called by the user to read ARIS data. The function calls the ReadFile_ARIS function internally to read individual sonar files. Sometimes the function will error out because of a bad text file - just remove the offending file (look at the text file first, to make sure that it is empty) and the function should run after that.
+Reads all the files in the passed directory and appends them into one data frame.  This is the only function called by the user to read ARIS data. The function calls \code{\link{ReadFile_ARIS}} internally to read individual sonar files. Sometimes the function will error out because of a bad text file - just remove the offending file (look at the text file first, to make sure that it is empty) and the function should run after that.
 }
 \author{
-Allison Matter and Carl Pfisterer
+Allison Matter and Carl Pfisterer.
 }

@@ -2,18 +2,18 @@
 % Please edit documentation in R/prepare_historical_counts.R
 \name{prepare_historical_counts}
 \alias{prepare_historical_counts}
-\title{Prepare the historical fish counts for Hamachan's hierarchical run-timing model}
+\title{Prepare the historical fish counts for Hamachan's hierarchical run-timing model.}
 \usage{
 prepare_historical_counts(path, year)
 }
 \arguments{
-\item{path}{File to the historical fish count excel file. Note: Jordy standardized the file format in 2020 -- if this function throws an error, make sure you are using the current version.}
+\item{path}{File to the historical fish count excel file. Note: the file format was standardized in 2020 -- if this function throws an error, check out 2019/WorkingDirectory/Data/RuntimingData.xlsx.}
 
-\item{year}{The current year}
+\item{year}{The current year.}
 }
 \description{
-Prepare the historical fish counts for Hamachan's hierarchical run-timing model
+Prepare the historical fish counts for Hamachan's hierarchical run-timing model.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

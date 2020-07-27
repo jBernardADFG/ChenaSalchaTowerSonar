@@ -7,15 +7,15 @@
 extract_final_results(hamachan_samples, historical_counts, ra_ests)
 }
 \arguments{
-\item{hamachan_samples}{The output of run_hamachan.}
+\item{hamachan_samples}{The output of \code{\link{run_hamachan}}.}
 
-\item{historical_counts}{The output of prepare_historical_counts.}
+\item{historical_counts}{The output of \code{\link{prepare_historical_counts}}.}
 
-\item{ra_ests}{The output of runningavg_interp.}
+\item{ra_ests}{The output of \code{\link{runningavg_interp}}.}
 }
 \description{
 Extract the final results from the model.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

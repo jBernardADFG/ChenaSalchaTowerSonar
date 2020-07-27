@@ -1,9 +1,9 @@
 #' Estimate mean, sd, and se of carcass lengths.
-#' @description Runs Hierarchical Bayesian model to estimate mean, sd, and se of carcass lengths and returns posterior samples. This information is used to inform priors in the mixture model (see run_mixture_model).
-#' @param carcass_data The output of prepare_length_data.
+#' @description Runs Hierarchical Bayesian model to estimate mean, sd, and se of carcass lengths and returns posterior samples. This information is used to inform priors in the mixture model (see \code{\link{run_mixture_model}}).
+#' @param carcass_data The output of \code{\link{prepare_length_data}}.
 #' @param ncores The number of cores for parallel chains.
 #' @param niter The number of MCMC iterations. 10k will take roughly 8 minutes whereas 50k will take 35 minutes. 
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 get_length_samples <- function(carcass_data, file_dir, ncores=3, niter=10000){

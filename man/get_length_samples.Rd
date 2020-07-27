@@ -7,15 +7,15 @@
 get_length_samples(carcass_data, file_dir, ncores = 3, niter = 10000)
 }
 \arguments{
-\item{carcass_data}{The output of prepare_length_data.}
+\item{carcass_data}{The output of \code{\link{prepare_length_data}}.}
 
 \item{ncores}{The number of cores for parallel chains.}
 
 \item{niter}{The number of MCMC iterations. 10k will take roughly 8 minutes whereas 50k will take 35 minutes.}
 }
 \description{
-Runs Hierarchical Bayesian model to estimate mean, sd, and se of carcass lengths and returns posterior samples. This information is used to inform priors in the mixture model (see run_mixture_model).
+Runs Hierarchical Bayesian model to estimate mean, sd, and se of carcass lengths and returns posterior samples. This information is used to inform priors in the mixture model (see \code{\link{run_mixture_model}}).
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

@@ -1,10 +1,10 @@
 #' Formats mixture model output and visual count data for expansion.
-#' @description The posterior totals are formatted as a set of arrays, in which each cell corresponds to a 20-min counting block.  Array dimensions correspond to date, 8-hr shift, hour period, and 20-min block. Arrays are generated for point estimates (median) and variance, for each species and each sonar station. This information will be taken as input in expand_counts.
+#' @description The posterior totals are formatted as a set of arrays, in which each cell corresponds to a 20-min counting block.  Array dimensions correspond to date, 8-hr shift, hour period, and 20-min block. Arrays are generated for point estimates (median) and variance, for each species and each sonar station. This information will be taken as input in \code{\link{expand_counts}}.
 #' @param visual_counts Visual count data. See main_2019.R for more information.
 #' @param sonar_counts Sonar count data. See main_2019.R for more information.
-#' @param mixture_samples Output of run_mixture_model
+#' @param mixture_samples Output of \code{\link{run_mixture_model}}.
 #' @param trunc Lower bound for post-truncation based on input length. In past years, 450 seemed to work best.
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 prepare_sonar_counts_for_expansion <- function(visual_counts, sonar_counts, mixture_samples, trunc=450, lthresh=650){

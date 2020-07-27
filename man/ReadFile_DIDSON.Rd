@@ -2,16 +2,16 @@
 % Please edit documentation in R/ReadFile_DIDSON.R
 \name{ReadFile_DIDSON}
 \alias{ReadFile_DIDSON}
-\title{Reads DIDSON files. Called internally within ProcessFiles.}
+\title{Reads DIDSON files.}
 \usage{
 ReadFile_DIDSON(filename = "tempfile.txt")
 }
 \arguments{
-\item{filename}{File to be processed}
+\item{filename}{File to be processed.}
 }
 \description{
-Returns a data frame containing the rows from the file columns for date, start time, the end time, and duration.
+Called internally within \code{\link{ProcessFiles_DIDSON}}. Returns a data frame containing the rows from the file columns for date, start time, the end time, and duration.
 }
 \author{
-Carl Pfisterer
+Carl Pfisterer.
 }

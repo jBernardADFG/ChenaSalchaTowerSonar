@@ -1,7 +1,7 @@
 #' Processes all DIDSON files within a specified directory.
-#' @description Reads all the files in the passed directory and appends them into one data frame.  This is the only function called by the user to read DIDSON data.  The function calls the ReadFile_DIDSON function internally to read individual sonar files. Sometimes the function will error out because of a bad text file - just remove the offending file (look at the text file first, to make sure that it is empty) and the function should run after that.
+#' @description Reads all the files in the passed directory and appends them into one data frame.  This is the only function called by the user to read DIDSON data.  The function calls \code{\link{ReadFile_DIDSON}} internally to read individual sonar files. Sometimes the function will error out because of a bad text file - just remove the offending file (look at the text file first, to make sure that it is empty) and the function should run after that.
 #' @param dir Full address of the directory to be processed.
-#' @author Carl Pfisterer
+#' @author Carl Pfisterer.
 #' @export
 ProcessFiles_DIDSON = function(dir){
   cat(paste("\nProcessing files in directory:",dir,"\n"));

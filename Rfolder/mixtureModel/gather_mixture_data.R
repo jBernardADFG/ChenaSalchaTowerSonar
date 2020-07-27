@@ -1,8 +1,8 @@
-#' Gather and format data for mixture model
-#' @param sonar_fish data.frame containing the sonar data
-#' @param length_priors Output of extract_length_priors
-#' @param runtiming_priors Output of extract_runtiming_priors
-#' @author Matt Tyres and Jordy Bernard
+#' Gather and format data for mixture model.
+#' @param sonar_fish data.frame containing the sonar data.
+#' @param length_priors Output of \code{\link{extract_length_priors}}.
+#' @param runtiming_priors Output of \code{\link{extract_runtiming_priors}}.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 gather_mixture_data <- function(sonar_fish, length_priors, runtiming_priors){

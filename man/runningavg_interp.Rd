@@ -2,16 +2,16 @@
 % Please edit documentation in R/runningavg_interp.R
 \name{runningavg_interp}
 \alias{runningavg_interp}
-\title{Apply the running-average interpolation method where applicable}
+\title{Apply the running-average interpolation method where applicable.}
 \usage{
 runningavg_interp(x)
 }
 \arguments{
-\item{x}{Output of compile_estimates}
+\item{x}{Output of \code{\link{compile_estimates}}.}
 }
 \description{
-Apply the running-average interpolation method where applicable
+Apply the running-average interpolation method where applicable.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

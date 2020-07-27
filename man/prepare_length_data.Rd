@@ -2,7 +2,7 @@
 % Please edit documentation in R/prepare_length_data.R
 \name{prepare_length_data}
 \alias{prepare_length_data}
-\title{Reads in carcass length data}
+\title{Reads in carcass length data.}
 \usage{
 prepare_length_data(dir)
 }
@@ -10,8 +10,8 @@ prepare_length_data(dir)
 \item{dir}{The address of the directory where the carcass length data is stored.}
 }
 \description{
-Reads in and formats carcass length data for use in get_length_samples.
+Reads in and formats carcass length data for use in \code{\link{get_length_samples}}.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

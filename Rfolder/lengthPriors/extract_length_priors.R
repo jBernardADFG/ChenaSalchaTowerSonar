@@ -1,7 +1,7 @@
-#' Extract relavant data from posterior samples
-#' @description Extracts the mean, sd, and se of carcass lengths for use in mixture model (see run_mixture_model)
-#' @param length_samples The output of get_length_samples
-#' @author Matt Tyres and Jordy Bernard
+#' Extract relavant data from posterior samples.
+#' @description Extracts the mean, sd, and se of carcass lengths for use in mixture model (see \code{\link{run_mixture_model}}).
+#' @param length_samples The output of \code{\link{get_length_samples}}.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 extract_length_priors <- function(length_samples){

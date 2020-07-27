@@ -1,9 +1,9 @@
-#' Estimate parameters of hierarchical logistic regression using MCMC routine 
+#' Estimate parameters of hierarchical logistic regression using MCMC routine.
 #' @description The sonar species apportionment model uses species priors that are weakly informed by a logistic curve. To estimate these parameters, a hierarchical logistic regression model is used where the non-expanded visual counts for each day are used as input data. Regression coefficients are treated as hierarchically distributed.  Since the timing of the chum and king runs for the Chena and Salcha rivers tend to be similar each year, the coefficient pairs (intercepts for both rivers, slopes for both rivers) are assumed to be MVN, allowing the inclusion of a correlation parameter. If one river's sonar season is compromised, this allows the borrowing of information from the other river.  
-#' @param runtiming_data Output of prepare_runtiming_data
+#' @param runtiming_data Output of \code{\link{prepare_runtiming_data}}.
 #' @param niter The number of MCMC iterations. 100k will take roughly 6 minutes whereas 500k will take 30 minutes. 
 #' @param ncores The number of cores for parallel chains.
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 get_runtiming_samples <- function(runtiming_data, file_dir, niter=100000, ncores=3){

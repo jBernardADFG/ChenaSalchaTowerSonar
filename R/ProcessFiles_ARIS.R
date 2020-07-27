@@ -1,7 +1,7 @@
 #' Processes all ARIS files within a specified directory.
-#' @description Reads all the files in the passed directory and appends them into one data frame.  This is the only function called by the user to read ARIS data. The function calls the ReadFile_ARIS function internally to read individual sonar files. Sometimes the function will error out because of a bad text file - just remove the offending file (look at the text file first, to make sure that it is empty) and the function should run after that.
+#' @description Reads all the files in the passed directory and appends them into one data frame.  This is the only function called by the user to read ARIS data. The function calls \code{\link{ReadFile_ARIS}} internally to read individual sonar files. Sometimes the function will error out because of a bad text file - just remove the offending file (look at the text file first, to make sure that it is empty) and the function should run after that.
 #' @param dir Full address of the directory to be processed.
-#' @author Allison Matter and Carl Pfisterer
+#' @author Allison Matter and Carl Pfisterer.
 #' @export
 
 ProcessFiles_ARIS = function(dir){

@@ -2,12 +2,12 @@
 % Please edit documentation in R/get_runtiming_samples.R
 \name{get_runtiming_samples}
 \alias{get_runtiming_samples}
-\title{Estimate parameters of hierarchical logistic regression using MCMC routine}
+\title{Estimate parameters of hierarchical logistic regression using MCMC routine.}
 \usage{
 get_runtiming_samples(runtiming_data, file_dir, niter = 1e+05, ncores = 3)
 }
 \arguments{
-\item{runtiming_data}{Output of prepare_runtiming_data}
+\item{runtiming_data}{Output of \code{\link{prepare_runtiming_data}}.}
 
 \item{niter}{The number of MCMC iterations. 100k will take roughly 6 minutes whereas 500k will take 30 minutes.}
 
@@ -17,5 +17,5 @@ get_runtiming_samples(runtiming_data, file_dir, niter = 1e+05, ncores = 3)
 The sonar species apportionment model uses species priors that are weakly informed by a logistic curve. To estimate these parameters, a hierarchical logistic regression model is used where the non-expanded visual counts for each day are used as input data. Regression coefficients are treated as hierarchically distributed.  Since the timing of the chum and king runs for the Chena and Salcha rivers tend to be similar each year, the coefficient pairs (intercepts for both rivers, slopes for both rivers) are assumed to be MVN, allowing the inclusion of a correlation parameter. If one river's sonar season is compromised, this allows the borrowing of information from the other river.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

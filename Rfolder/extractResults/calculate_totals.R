@@ -1,8 +1,8 @@
 #' Calculate totals, according to a user-input date range.
-#' @param final_results The output of extract_final_results.
+#' @param final_results The output of \code{\link{extract_final_results}}.
 #' @param from The start date (e.g. "2019-06-23"). 
 #' @param to The end date (e.g. "2019-08-10"). 
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 calculate_totals <- function(final_results, from, to){

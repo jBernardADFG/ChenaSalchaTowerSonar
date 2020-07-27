@@ -6,7 +6,7 @@ Authors@R:
            family = "Bernard",
            role = c("aut", "cre"),
            email = "jordy.bernard@alaska.gov")
-Description: Insert Description
+Description: See Regional Operational Plan SF.3F.2019.03
 License: `use_mit_license()`
 Encoding: UTF-8
 LazyData: true

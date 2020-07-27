@@ -2,18 +2,18 @@
 % Please edit documentation in R/prepare_runtiming_data.R
 \name{prepare_runtiming_data}
 \alias{prepare_runtiming_data}
-\title{Read in Historical Run Timing Data}
+\title{Read in Historical Run Timing Data.}
 \usage{
 prepare_runtiming_data(chena_file, salcha_file)
 }
 \arguments{
-\item{chena_file}{Directory of the Chena run timing data}
+\item{chena_file}{Directory of the Chena run timing data.}
 
-\item{salcha_file}{Directory of the Salcha run timing data}
+\item{salcha_file}{Directory of the Salcha run timing data.}
 }
 \description{
-Function reads in historical run timing data and formats the data for use in get_runtiming_samples.
+Function reads in historical run timing data and formats the data for use in \code{\link{get_runtiming_samples}}.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

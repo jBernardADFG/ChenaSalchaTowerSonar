@@ -1,8 +1,8 @@
-#' Read in Historical Run Timing Data
-#' @description Function reads in historical run timing data and formats the data for use in get_runtiming_samples.
-#' @param chena_file Directory of the Chena run timing data
-#' @param salcha_file Directory of the Salcha run timing data
-#' @author Matt Tyres and Jordy Bernard
+#' Read in Historical Run Timing Data.
+#' @description Function reads in historical run timing data and formats the data for use in \code{\link{get_runtiming_samples}}.
+#' @param chena_file Directory of the Chena run timing data.
+#' @param salcha_file Directory of the Salcha run timing data.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 prepare_runtiming_data <- function(chena_file, salcha_file){

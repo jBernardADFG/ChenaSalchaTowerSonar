@@ -1,7 +1,7 @@
-#' Prepare the historical fish counts for Hamachan's hierarchical run-timing model 
-#' @param path File to the historical fish count excel file. Note: Jordy standardized the file format in 2020 -- if this function throws an error, make sure you are using the current version.
-#' @param year The current year
-#' @author Matt Tyres and Jordy Bernard
+#' Prepare the historical fish counts for Hamachan's hierarchical run-timing model.
+#' @param path File to the historical fish count excel file. Note: the file format was standardized in 2020 -- if this function throws an error, check out 2019/WorkingDirectory/Data/RuntimingData.xlsx.
+#' @param year The current year.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 prepare_historical_counts <- function(path, year){
 

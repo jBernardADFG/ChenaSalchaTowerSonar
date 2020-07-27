@@ -1,8 +1,8 @@
-#' Expand visual and sonar counts
+#' Expand visual and sonar counts.
 #' @description Function calculates the variance due to expansion from incomplete counts as well as from the expansion itself by implementing the variance calculations for the visual data (from the spreadsheet). In the case of the sonar, it is assumed that the the variances due to expansion and due to species apportionment are independent of one another, and can be summed.  
-#' @param x Typically the sum of two arrays where one cooresponds to each side of the river. When expanding sonar counts the arrays output from prepare_sonar_counts_for_expansion. When expanding visual counts, the arrays will be output from prepare_visual_counts_for_expansion. See examples.
+#' @param x Typically the sum of two arrays where one cooresponds to each side of the river. When expanding sonar counts the arrays output from \code{\link{prepare_sonar_counts_for_expansion}}. When expanding visual counts, the arrays will be output from \code{\link{prepare_visual_counts_for_expansion}}. See examples.
 #' @param vx Variance due to species apportionment. When expanding visual counts, use vx=NULL. See examples. 
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 expand_counts <- function(x, vx=NULL) {

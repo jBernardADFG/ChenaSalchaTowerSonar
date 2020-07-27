@@ -1,9 +1,9 @@
-#' Use sonar data to apportion and enumerate fish passage by species
-#' @description The function runs the big mixture model and outputs the posterior samples
-#' @param mixture_data Output of gather_mixture_data
+#' Use sonar data to apportion and enumerate fish passage by species.
+#' @description The function runs the big mixture model and outputs the posterior samples.
+#' @param mixture_data Output of \code{\link{gather_mixture_data}}.
 #' @param niter The number of MCMC iterations. 50k takes roughly 2.5 hours, 200k takes 9 hours, 500k takes 25ish. 
 #' @param ncores The number of cores for parallel chains.
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 run_mixture_model <- function(mixture_data, file_dir, niter = 500000, ncores = 3){

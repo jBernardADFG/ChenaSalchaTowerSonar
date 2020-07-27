@@ -1,7 +1,7 @@
-#' Reads ARIS files. Called internally within ProcessFiles.
-#' @description Returns a data frame containing the rows from the file columns for date, start time, the end time, and duration.
-#' @param filename File to be processed
-#' @author Allison Matter and Carl Pfisterer
+#' Reads ARIS files.
+#' @description Called internally within ProcessFiles_ARIS. Returns a data frame containing the rows from the file columns for date, start time, the end time, and duration.
+#' @param filename File to be processed.
+#' @author Allison Matter and Carl Pfisterer.
 #' @importFrom stringr str_extract
 
 ReadFile_ARIS=function(filename="tempfile.txt"){

@@ -1,9 +1,9 @@
 #' Run Hamachan's hierarchical run-timing model. 
-#' @param historical_counts Output of prepare_historical_counts. 
+#' @param historical_counts Output of \code{\link{prepare_historical_counts}}. 
 #' @param file_dir The file directory to write the jags model. The directory needs to have a .jags extension.
 #' @param ncores The number of cores for parallel chains.
 #' @param niter The number of MCMC iterations.
-#' @author Jordy Bernard
+#' @author Jordy Bernard.
 #' @export
 
 run_hamachan <- function(historical_counts, file_dir, ncores=3, niter=200000){

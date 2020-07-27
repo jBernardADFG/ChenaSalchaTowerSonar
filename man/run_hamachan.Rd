@@ -7,7 +7,7 @@
 run_hamachan(historical_counts, file_dir, ncores = 3, niter = 2e+05)
 }
 \arguments{
-\item{historical_counts}{Output of prepare_historical_counts.}
+\item{historical_counts}{Output of \code{\link{prepare_historical_counts}}.}
 
 \item{file_dir}{The file directory to write the jags model. The directory needs to have a .jags extension.}
 
@@ -19,5 +19,5 @@ run_hamachan(historical_counts, file_dir, ncores = 3, niter = 2e+05)
 Run Hamachan's hierarchical run-timing model.
 }
 \author{
-Jordy Bernard
+Jordy Bernard.
 }

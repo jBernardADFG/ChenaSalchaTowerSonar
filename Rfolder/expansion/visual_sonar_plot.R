@@ -1,3 +1,8 @@
+#' Plot expanded visual and sonar counts.
+#' @param x Output of \code{\link{compile_estimates}}.
+#' @author Matt Tyres and Jordy Bernard.
+#' @export
+
 visual_sonar_plot <- function(x, ...) {
   vis95lo <- x$vis_count_expanded - 2*sqrt(x$vis_var_expansion)
   vis95hi <- x$vis_count_expanded + 2*sqrt(x$vis_var_expansion)

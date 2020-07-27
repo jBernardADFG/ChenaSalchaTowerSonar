@@ -17,13 +17,13 @@ prepare_sonar_counts_for_expansion(
 
 \item{sonar_counts}{Sonar count data. See main_2019.R for more information.}
 
-\item{mixture_samples}{Output of run_mixture_model}
+\item{mixture_samples}{Output of \code{\link{run_mixture_model}}.}
 
 \item{trunc}{Lower bound for post-truncation based on input length. In past years, 450 seemed to work best.}
 }
 \description{
-The posterior totals are formatted as a set of arrays, in which each cell corresponds to a 20-min counting block.  Array dimensions correspond to date, 8-hr shift, hour period, and 20-min block. Arrays are generated for point estimates (median) and variance, for each species and each sonar station. This information will be taken as input in expand_counts.
+The posterior totals are formatted as a set of arrays, in which each cell corresponds to a 20-min counting block.  Array dimensions correspond to date, 8-hr shift, hour period, and 20-min block. Arrays are generated for point estimates (median) and variance, for each species and each sonar station. This information will be taken as input in \code{\link{expand_counts}}.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

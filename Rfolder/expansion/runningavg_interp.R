@@ -1,6 +1,6 @@
-#' Apply the running-average interpolation method where applicable
-#' @param x Output of compile_estimates
-#' @author Matt Tyres and Jordy Bernard
+#' Apply the running-average interpolation method where applicable.
+#' @param x Output of \code{\link{compile_estimates}}.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 runningavg_interp <- function(x) {
   avgcv <- mean(sqrt(x$vis_var_expansion)/x$vis_count_expanded, na.rm=T)

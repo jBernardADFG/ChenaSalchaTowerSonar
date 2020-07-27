@@ -2,20 +2,20 @@
 % Please edit documentation in R/gather_mixture_data.R
 \name{gather_mixture_data}
 \alias{gather_mixture_data}
-\title{Gather and format data for mixture model}
+\title{Gather and format data for mixture model.}
 \usage{
 gather_mixture_data(sonar_fish, length_priors, runtiming_priors)
 }
 \arguments{
-\item{sonar_fish}{data.frame containing the sonar data}
+\item{sonar_fish}{data.frame containing the sonar data.}
 
-\item{length_priors}{Output of extract_length_priors}
+\item{length_priors}{Output of \code{\link{extract_length_priors}}.}
 
-\item{runtiming_priors}{Output of extract_runtiming_priors}
+\item{runtiming_priors}{Output of \code{\link{extract_runtiming_priors}}.}
 }
 \description{
-Gather and format data for mixture model
+Gather and format data for mixture model.
 }
 \author{
-Matt Tyres and Jordy Bernard
+Matt Tyres and Jordy Bernard.
 }

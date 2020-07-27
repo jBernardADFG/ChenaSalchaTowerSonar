@@ -1,7 +1,7 @@
-#' Compile visual and sonar estimates into a single data.frame
-#' @param vis_expanded Expanded visual counts output from expand_counts
-#' @param son_expanded Expanded sonar counts output from expand_counts
-#' @author Matt Tyres and Jordy Bernard
+#' Compile visual and sonar estimates into a single data.frame.
+#' @param vis_expanded Expanded visual counts output from \code{\link{expand_counts}}.
+#' @param son_expanded Expanded sonar counts output from \code{\link{expand_counts}}.
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 compile_estimates <- function(vis_expanded, son_expanded){

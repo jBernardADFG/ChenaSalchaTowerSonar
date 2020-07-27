@@ -1,7 +1,7 @@
-#' Reads in carcass length data
-#' @description Reads in and formats carcass length data for use in get_length_samples. 
+#' Reads in carcass length data.
+#' @description Reads in and formats carcass length data for use in \code{\link{get_length_samples}}. 
 #' @param dir The address of the directory where the carcass length data is stored.
-#' @author Matt Tyres and Jordy Bernard
+#' @author Matt Tyres and Jordy Bernard.
 #' @export
 
 prepare_length_data <- function(dir){

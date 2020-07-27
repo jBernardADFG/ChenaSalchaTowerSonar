@@ -1,7 +1,7 @@
-#' Reads DIDSON files. Called internally within ProcessFiles.
-#' @description Returns a data frame containing the rows from the file columns for date, start time, the end time, and duration.
-#' @param filename File to be processed
-#' @author Carl Pfisterer
+#' Reads DIDSON files.
+#' @description Called internally within \code{\link{ProcessFiles_DIDSON}}. Returns a data frame containing the rows from the file columns for date, start time, the end time, and duration.
+#' @param filename File to be processed.
+#' @author Carl Pfisterer.
 ReadFile_DIDSON = function(filename="tempfile.txt"){
   StartTime = scan(filename,skip=5,nlines=1,quiet=TRUE,what=character())[4];  			#Keep as text
   Duration = round(as.double(scan(filename,skip=3, nlines=1,quiet=TRUE,what=character())[4]),digits=0)	#Duration in minutes
