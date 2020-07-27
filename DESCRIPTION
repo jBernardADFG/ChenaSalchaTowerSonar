@@ -1,0 +1,16 @@
+Package: ChenaSalchaTowerSonar
+Title: Apportion and enumerate salmon on the Chena and Salcha
+Version: 0.1
+Authors@R: 
+    person(given = "Jordy",
+           family = "Bernard",
+           role = c("aut", "cre"),
+           email = "jordy.bernard@alaska.gov")
+Description: Insert Description
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+
+
