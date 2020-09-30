@@ -4,7 +4,7 @@
 \alias{standardize_ARIS}
 \title{Converts ARIS data to a standardized format.}
 \usage{
-standardize_ARIS(x, river, station)
+standardize_ARIS(x, river, station, year)
 }
 \arguments{
 \item{x}{data.frame returned from \code{\link{ProcessFiles_ARIS}}.}

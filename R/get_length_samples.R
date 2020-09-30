@@ -26,10 +26,15 @@ get_length_samples <- function(carcass_data, file_dir, ncores=3, niter=10000){
   }
   catmean[1:Ncat] <- mu[1:Ncat,Nyear]
   }', file=file_dir)
-  length.jags.out <- jagsUI::jags(model.file=file_dir, data=carcass_data,
+  length.jags.out <- jagsUI::jags(model.file=file_dir, 
+                                  data=carcass_data,
                                   parameters.to.save=c("mu","mumu","sigmu","sigma","catmean"), 
-                                  n.chains=ncores, parallel=T, n.iter=niter, n.burnin=niter/2, n.thin=niter/2000)
-  print(paste("Time to run model:", round(Sys.time()-tstart,2), "minutes"))
+                                  n.chains=ncores, 
+                                  parallel=T, 
+                                  n.iter=niter, 
+                                  n.burnin=niter/2, 
+                                  n.thin=1)
+  print(paste("Time to run model:", round(Sys.time()-tstart,2)))
   return(length.jags.out)
 }
 

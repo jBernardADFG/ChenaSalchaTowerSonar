@@ -6,23 +6,26 @@
 #' @author Matt Tyers and Jordy Bernard.
 #' @export
 
-standardize_ARIS <- function(x, river, station) {
+standardize_ARIS <- function(x, river, station, year) {
+  
   # --------------------------
   # 2019 data fixages
-  if(grepl("-", x$Date[1])){
-    d <- as.POSIXct(x$Date)
-    x$Date <- as.character(d, format="%m/%d/%Y")
-  }
-  if(length(names(x)[names(x)=="Date.1"])>0){
-    names(x)[names(x)=="Date.1"] <- "Date1"
-    x$Date1 <- x$Date
-    x$Date1 <- as.Date(x$Date1, format="%m/%d/%Y")
-  }
-  if(length(names(x)[names(x)=="Length"])>0){
-    names(x)[names(x)=="Length"] <- "L_cm"
-  }
-  if(nchar(x$StartTime[1])<8){
-    x$StartTime <- paste0(x$StartTime,":00")
+  if (year==2019){
+    if(grepl("-", x$Date[1])){
+      d <- as.POSIXct(x$Date)
+      x$Date <- as.character(d, format="%m/%d/%Y")
+    }
+    if(length(names(x)[names(x)=="Date.1"])>0){
+      names(x)[names(x)=="Date.1"] <- "Date1"
+      x$Date1 <- x$Date
+      x$Date1 <- as.Date(x$Date1, format="%m/%d/%Y")
+    }
+    if(length(names(x)[names(x)=="Length"])>0){
+      names(x)[names(x)=="Length"] <- "L_cm"
+    }
+    if(nchar(x$StartTime[1])<8){
+      x$StartTime <- paste0(x$StartTime,":00")
+    }
   }
   # --------------------------
   
