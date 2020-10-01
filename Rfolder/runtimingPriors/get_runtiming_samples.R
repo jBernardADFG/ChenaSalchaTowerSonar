@@ -44,6 +44,7 @@ get_runtiming_samples <- function(runtiming_data, file_dir, niter=100000, ncores
   tstart <- Sys.time()
   CS.jags.out <- jagsUI::jags(model.file=file_dir, data=runtiming_data, parameters.to.save=c("b0","b1","a0","a1","rho0","rho1"),
                               n.chains=ncores, parallel=T, n.iter=niter, n.thin=niter/2000, n.burnin=niter/2)
-  print(paste("Time to run model:", round(Sys.time()-tstart,2), "minutes"))
+  diff <- round(Sys.time()-tstart,2)
+  print(paste("Time to run model:", diff, units(diff)))
   return(CS.jags.out)
 }

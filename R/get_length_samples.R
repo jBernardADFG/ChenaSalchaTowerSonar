@@ -34,7 +34,8 @@ get_length_samples <- function(carcass_data, file_dir, ncores=3, niter=10000){
                                   n.iter=niter, 
                                   n.burnin=niter/2, 
                                   n.thin=1)
-  print(paste("Time to run model:", round(Sys.time()-tstart,2)))
+  diff <- round(Sys.time()-tstart, 2)
+  print(paste("Time to run model:", diff, units(diff)))
   return(length.jags.out)
 }
 

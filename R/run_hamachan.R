@@ -49,7 +49,6 @@ run_hamachan <- function(historical_counts, file_dir, ncores=3, niter=200000){
     
     b01 ~ dexp(0.0001)
     b02 ~ dexp(0.0001)
-    
     b01.prec <- pow(1/b01.sig, 2)
     b02.prec <- pow(1/b02.sig, 2)
     b01.sig ~ dexp(0.0001)
@@ -109,7 +108,6 @@ run_hamachan <- function(historical_counts, file_dir, ncores=3, niter=200000){
   return(list(chin_samples=chin_samples, chum_samples=chum_samples))
   
 }
-
 
 
 

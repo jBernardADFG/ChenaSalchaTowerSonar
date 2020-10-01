@@ -4,8 +4,8 @@
 #' @author Matt Tyres and Jordy Bernard.
 #' @export
 prepare_historical_counts <- function(path, year){
-
-  letter <- LETTERS[year-2018]
+  
+  letter <- LETTERS[(year-2019)*2+1]
   range <- paste("A6:B", letter, "89", sep="")
   Cchin_histo <- suppressMessages(as.data.frame(readxl::read_xlsx(path, "Chena Historic Chinook", range, col_names=F)))
   Cchum_histo <- suppressMessages(as.data.frame(readxl::read_xlsx(path, "Chena Historic Chum", range, col_names=F)))

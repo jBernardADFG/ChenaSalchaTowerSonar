@@ -7,14 +7,13 @@
 prepare_visual_counts_for_expansion <- function(visual_counts, sonar_expansion_data){
   Schin_vis <- Schum_vis <- Cchin_vis <- Cchum_vis <- NA*sonar_expansion_data[[1]]
   attr(Schin_vis, "dates") <- attr(Schum_vis, "dates") <- attr(Cchin_vis, "dates") <- attr(Cchum_vis, "dates") <- attr(sonar_expansion_data[[1]], "dates")
-  
   for(i in 1:3) {
-    Cnr <- nrow(visual_counts$Chena_2019_Chin_vis)
-    Snr <- nrow(visual_counts$Salcha_2019_Chin_vis)
-    Cchin_vis[,i,,1] <- as.matrix(visual_counts$Chena_2019_Chin_vis[seq(i,Cnr,by=3),3:10])
-    Cchum_vis[,i,,1] <- as.matrix(visual_counts$Chena_2019_Chum_vis[seq(i,Cnr,by=3),3:10])
-    Schin_vis[,i,,1] <- as.matrix(visual_counts$Salcha_2019_Chin_vis[seq(i,Snr,by=3),3:10])
-    Schum_vis[,i,,1] <- as.matrix(visual_counts$Salcha_2019_Chum_vis[seq(i,Snr,by=3),3:10])
+    Cnr <- nrow(visual_counts$Chena_Chin_vis)
+    Snr <- nrow(visual_counts$Salcha_Chin_vis)
+    Cchin_vis[,i,,1] <- as.matrix(visual_counts$Chena_Chin_vis[seq(i,Cnr,by=3),3:10])
+    Cchum_vis[,i,,1] <- as.matrix(visual_counts$Chena_Chum_vis[seq(i,Cnr,by=3),3:10])
+    Schin_vis[,i,,1] <- as.matrix(visual_counts$Salcha_Chin_vis[seq(i,Snr,by=3),3:10])
+    Schum_vis[,i,,1] <- as.matrix(visual_counts$Salcha_Chum_vis[seq(i,Snr,by=3),3:10])
   }
   list(Schin_vis=Schin_vis, Schum_vis=Schum_vis, Cchin_vis=Cchin_vis, Cchum_vis=Cchum_vis)
 }

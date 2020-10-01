@@ -133,11 +133,12 @@ run_mixture_model <- function(mixture_data, file_dir, niter = 500000, ncores = 3
   }', file=file_dir)
   ## these nodes needed initial values at one point, I think recentering the lengths may have fixed it??
   # someinits <- function() list(betaD0=rnorm(2,-190,5),betaD1=rnorm(2,1.4,0.1))
-  print(paste("anticipated number of hours:", round(.1+.000044*niter, 2)))
+  # print(paste("anticipated number of hours:", round(.1+.000044*niter, 2)))
   t.start <- Sys.time()
   jags_out <- jagsUI::jags(model.file=file_dir, data=mixture_data, 
                                           parameters.to.save=c("N.chum.day","N.chin.day","lambda","betaD0","betaD1","N.chin","N.chum","sig","species","L.mm.act","sex","prec"),
                                           n.chains=ncores, parallel = T, n.iter=niter, n.burnin=niter/2, n.thin=niter/2000, n.adapt=niter/10) # inits=someinits, 
-  print(paste("Time to run model:", round(Sys.time()-t.start,2), "minutes"))
+  diff <- round(Sys.time()-t.start,2)
+  print(paste("Time to run model:", diff, units(diff)))
   return(jags_out)
 }
