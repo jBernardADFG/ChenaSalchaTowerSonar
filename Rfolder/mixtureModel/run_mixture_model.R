@@ -6,7 +6,7 @@
 #' @author Matt Tyres and Jordy Bernard.
 #' @export
 
-run_mixture_model <- function(mixture_data, file_dir, niter = 500000, ncores = 3){
+run_mixture_model <- function(mixture_data, file_dir, niter = 100000, ncores = 4){
   cat('model {
   
     for(i in 1:n.fish) {
@@ -137,8 +137,8 @@ run_mixture_model <- function(mixture_data, file_dir, niter = 500000, ncores = 3
   # print(paste("anticipated number of hours:", round(.1+.000044*niter, 2)))
   t.start <- Sys.time()
   jags_out <- jagsUI::jags(model.file=file_dir, data=mixture_data, 
-                                          parameters.to.save=c("N.chum.day","N.chin.day","lambda","betaD0","betaD1","N.chin","N.chum","sig","species","L.mm.act","sex","prec"),
-                                          n.chains=ncores, parallel = T, n.iter=niter, n.burnin=niter/2, n.thin=niter/2000, n.adapt=niter/10) # inits=someinits, 
+                                          parameters.to.save=c("N.chum.day","N.chin.day","lambda","betaD0","betaD1","N.chin","N.chum","sig","species","L.mm.act","sex","prec", "pi"),
+                                          n.chains=ncores, parallel = T, n.iter=niter, n.burnin=niter/2, n.thin=niter/2000, n.adapt=niter/10) #, inits=someinits) 
   diff <- round(Sys.time()-t.start,2)
   print(paste("Time to run model:", diff, units(diff)))
   return(jags_out)
