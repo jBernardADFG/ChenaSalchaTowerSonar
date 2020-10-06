@@ -9,7 +9,6 @@
 
 prepare_sonar_counts_for_expansion_2 <- function(visual_counts, sonar_counts, mixture_samples, trunc=450, lthresh=650){
   
-  
   all_sonar <- sonar_counts$all_sonar
   sonar_fish <- sonar_counts$sonar_fish
   
@@ -19,6 +18,7 @@ prepare_sonar_counts_for_expansion_2 <- function(visual_counts, sonar_counts, mi
     x[,substr(names(x),1,nchar(p))==p]
   }
   specmat <- pull_post(df, "species")
+  
   sonar_fish$modlength <- apply(pull_post(df, "L_act"), MARGIN=2, median)
   
   # For post-truncation based on input length, in past years, 450 seemed to work best.

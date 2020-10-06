@@ -9,15 +9,12 @@ extract_final_results <- function(hamachan_samples, historical_counts, ra_ests){
   
   nyrs <- ncol(historical_counts$Cchin_histo_counts)
   
-  hamachan_samples$chin_samples
-  hamachan_samples$chum_samples
-  
   Cchin_ham <- exp(hamachan_samples$chin_samples$sims.list$y1est[,,nyrs])-1
   Cchum_ham <- exp(hamachan_samples$chum_samples$sims.list$y1est[,,nyrs])-1
   Schin_ham <- exp(hamachan_samples$chin_samples$sims.list$y2est[,,nyrs])-1
   Schum_ham <- exp(hamachan_samples$chum_samples$sims.list$y2est[,,nyrs])-1
   
-  hierinterp <- function(x, ham, hamstart=as.Date("2019-06-23")) {
+  hierinterp <- function(x, ham, hamstart=as.Date("2020-06-23")) {
     x1a <- matrix(nrow=hamstart-min(as.Date(rownames(x))), ncol=ncol(x))
     x1b <- matrix(nrow=dim(ham)[2]-nrow(x)-(hamstart-min(as.Date(rownames(x)))), ncol=ncol(x))
     colnames(x1a) <- colnames(x1b) <- colnames(x)

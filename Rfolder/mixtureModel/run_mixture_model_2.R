@@ -6,12 +6,7 @@
 #' @author Jordy Bernard.
 #' @export
 
-run_mixture_model_2 <- function(mixture_data, file_dir, niter = 100000, ncores = 4){
-  
-  mixture_data
-  file_dir <- "Jags/mixture2.jags"
-  niter=1000
-  ncores=4
+run_mixture_model_2 <- function(mixture_data, hist_dat, file_dir, niter = 100000, ncores = 4){
   
   cat('model {
     
@@ -50,8 +45,10 @@ run_mixture_model_2 <- function(mixture_data, file_dir, niter = 100000, ncores =
   L_sonar <- mixture_data$L.mm.D
   L_sonar_tether <- c(632,602,1049,664,768,663,1025,685,681,957,953,747,646,666,627,531,584) 
   L_act_tether <- c(740,600,1170,710,950,650,1020,665,760,1040,970,840,700,700,620,620,690)
+  
   L_hist_chin <- as.vector(suppressWarnings(na.omit(as.numeric(hist_dat$Length[hist_dat$species=="Chinook"]))))
   L_hist_chum <- as.vector(suppressWarnings(na.omit(as.numeric(hist_dat$Length[hist_dat$species=="Chum"]))))
+  
   data <- list(L_sonar=L_sonar, 
                L_sonar_tether=L_sonar_tether, 
                L_act_tether=L_act_tether,

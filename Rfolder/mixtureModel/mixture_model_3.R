@@ -6,7 +6,7 @@
 #' @author Jordy Bernard.
 #' @export
 
-run_mixture_model_2 <- function(mixture_data, hist_dat, file_dir, niter = 100000, ncores = 4){
+run_mixture_model_3 <- function(mixture_data, hist_dat, file_dir, niter = 100000, ncores = 4){
   
   cat('model {
     
@@ -14,33 +14,40 @@ run_mixture_model_2 <- function(mixture_data, hist_dat, file_dir, niter = 100000
     for (i in 1:length(L_sonar_tether)){
       L_sonar_tether[i] ~ dnorm(beta_0 + beta_1*L_act_tether[i], tau_s)T(0,)
     }
-    beta_0 ~ dexp(0.0001) # Might need to change #
-    beta_1 ~ dexp(0.0001) # Might need to change #
+    beta_0 ~ dexp(0.0001)
+    beta_1 ~ dexp(0.0001)
     tau_s <- pow(sig_s, -2)
     sig_s ~ dexp(0.0001)
     
     # Mixture Component #
     for (i in 1:length(L_sonar)){
       L_sonar[i] ~ dnorm(beta_0 + beta_1*L_act[i], tau_s)T(0,)
-      L_act[i] ~ dnorm(mu[species[i]+1], tau[species[i]+1])T(0,)
+      L_act[i] ~ dnorm(mu[species[i]+1, n_years], tau[species[i]+1, n_years])T(0,)
       species[i] ~ dbern(pi[i])
       pi[i] ~ dbeta(0.5, 0.5)
     }
-    
+  
     # Historic Lengths #
-    for (i in 1:length(L_hist_chin)){
-      L_hist_chin[i] ~ dnorm(mu[1], tau[1])T(0,)
+    for (y in 1:n_years){
+      for (i in 1:length(L_hist_chin)){
+        L_hist_chin[i, y] ~ dnorm(mu[1, y], tau[1, y])T(0,)
+      }
+      for (i in 1:length(L_hist_chum)){
+        L_hist_chum[i, y] ~ dnorm(mu[2, y], tau[2, y])T(0,)
+      }
+      mu[1, y] ~ dnorm(mu_mu[1], tau_mu[1])T(0,)
+      mu[2, y] ~ dnorm(mu_mu[2], tau_mu[2])T(0,)
+      tau[1, y] <- pow(sig[1, y], -2)
+      tau[2, y] <- pow(sig[2, y], -2)
+      sig[1, y] ~ dexp(0.0001)
+      sig[2, y] ~ dexp(0.0001)
     }
-    for (i in 1:length(L_hist_chum)){
-      L_hist_chum[i] ~ dnorm(mu[2], tau[2])T(0,)
+    for (i in 1:2){
+      mu_mu[i] ~ dexp(0.0001)
+      tau_mu[i] <- pow(sig_mu[i], -2)
+      sig_mu[i] ~ dexp(0.0001)
     }
-    mu[1] ~ dexp(0.0001)
-    mu[2] ~ dexp(0.0001)
-    tau[1] <- pow(sig[1], -2)
-    tau[2] <- pow(sig[2], -2)
-    sig[1] ~ dexp(0.0001)
-    sig[2] ~ dexp(0.0001)
-    
+  
   }', file=file_dir)
   L_sonar <- mixture_data$L.mm.D
   L_sonar_tether <- c(632,602,1049,664,768,663,1025,685,681,957,953,747,646,666,627,531,584) 

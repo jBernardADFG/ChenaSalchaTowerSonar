@@ -6,6 +6,11 @@
 #' @export
 
 expand_counts <- function(x, vx=NULL) {
+  
+  x <- sonar_expansion_data$CN_chin+sonar_expansion_data$CS_chin
+  vx <- sonar_expansion_data$vCN_chin+sonar_expansion_data$vCS_chin
+  
+  
   worstcase=T
   Sydij <- apply(x, 1:2, sum, na.rm=T)         # count per shift
   # Sydi <- rowSums(Sydij)                       # count per day
@@ -38,23 +43,6 @@ expand_counts <- function(x, vx=NULL) {
   V2 <- (1/f1d)*rowSums((1-f2di)*(Mdi^2)*s22di/mdi, na.rm=T)
   VNd <- V1+V2
   
-  ## -- this section was for applying the interpolation (with variance).
-  ## -- decided to interpolate AFTER putting sonar & visual together.
-  # if(worstcase) {
-  #   cvmax <- max(sqrt(VNd)/Nd, na.rm=T)
-  #   vworstcase <- (Nd*cvmax)^2
-  #   VNd[is.na(VNd)] <- vworstcase[is.na(VNd)]
-  # }
-  
-  # # this is where I should figure out how to interpolate
-  # # interpolate where md==0
-  # md0 <- md==0
-  # md01 <- md02 <- F
-  # n <- length(md0)
-  # md01[-n] <- md0[-1]
-  # md02[-1] <- md0[-n]
-  # # wait... should interpolate AFTER putting sonar & visual together
-  # # do need to take out Nd where hd==1 (i think)
   Nd[md==0 | hd==1] <- NA
   
   if(!is.null(vx)) out <- data.frame(count_raw=apply(x,1,sum,na.rm=T), count_expanded=Nd, var_expansion=VNd,
