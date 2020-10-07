@@ -1,5 +1,11 @@
+#' Plot sonar + hamachan estimates for 2020 analysis
+#' @param df data.frame with columns named est, sd, method 
+#' @param y_up (numeric) upper bound of y-axis
+#' @param main (character) plot title
+#' @author Matt Tyres and Jordy Bernard.
+#' @export
 
-ct_plot <- function(df, y_up, main) {
+allison_plot <- function(df, y_up, main) {
   
   h_days <- ceiling(sum(df$method=="Sonar")*0.2)
   df <- df[(which(df$method=="Sonar")[1]-h_days):(which(df$method=="Sonar")[length(which(df$method=="Sonar"))]+h_days),]

@@ -2,6 +2,7 @@
 
 export(ProcessFiles_ARIS)
 export(ProcessFiles_DIDSON)
+export(allison_plot)
 export(calculate_totals)
 export(compile_estimates)
 export(expand_counts)
