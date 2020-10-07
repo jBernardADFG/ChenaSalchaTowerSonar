@@ -7,10 +7,6 @@
 
 expand_counts <- function(x, vx=NULL) {
   
-  x <- sonar_expansion_data$CN_chin+sonar_expansion_data$CS_chin
-  vx <- sonar_expansion_data$vCN_chin+sonar_expansion_data$vCS_chin
-  
-  
   worstcase=T
   Sydij <- apply(x, 1:2, sum, na.rm=T)         # count per shift
   # Sydi <- rowSums(Sydij)                       # count per day
